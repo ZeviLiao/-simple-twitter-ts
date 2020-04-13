@@ -1,0 +1,36 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a href="tweets" class="nav-link active">tweet</a></li>
+    <li class="nav-item"><a href="users" class="nav-link">user</a></li>
+  </ul>
+</div>
+<!-- Main Content -->
+<div>
+  <h1>Tweet Management</h1>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>User</td>
+        <td>Description</td>
+        <td>Reply</td>
+        <td colspan="1"></td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tweets }}
+      <tr>
+        <td>{{this.username}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.comment}}</td>
+        <td>
+          <form action="/admin/tweets/{{this.id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
