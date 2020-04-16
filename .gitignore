@@ -88,5 +88,6 @@ typings/
 
 # config/config.json
 
+dist
 temp
 
